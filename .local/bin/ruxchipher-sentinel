@@ -24,6 +24,7 @@ ALLOWED_LOG = LOG.with_name("allowed.log")
 ALLOW_FILE = Path.home() / ".config/ruxchipher/sentinel-allow.conf"
 PORT_POLL_SECONDS = 15
 DEDUPE_SECONDS = 10
+POPUP_SECONDS = 5  # auto-dismiss popups after this many seconds (GNOME ignores notify-send -t for critical alerts, so we close by ID)
 
 AUTH_RULES = [
     (re.compile(r"pam_unix\((?P<svc>[\w-]+):auth\): authentication failure.*?(?:user=(?P<user>\S+))?$"),
@@ -38,6 +39,15 @@ _last_alert = {}
 _lock = threading.Lock()
 
 
+def _close_notification(nid):
+    """GNOME keeps critical banners on screen until dismissed; close this one by ID."""
+    subprocess.run(["gdbus", "call", "--session",
+                    "--dest", "org.freedesktop.Notifications",
+                    "--object-path", "/org/freedesktop/Notifications",
+                    "--method", "org.freedesktop.Notifications.CloseNotification", str(nid)],
+                   check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+
 def notify(title, body, urgency="normal", icon="security-high"):
     key = (title, body)
     now = time.monotonic()
@@ -48,8 +58,15 @@ def notify(title, body, urgency="normal", icon="security-high"):
     LOG.parent.mkdir(parents=True, exist_ok=True)
     with LOG.open("a") as f:
         f.write(f"{datetime.now():%Y-%m-%d %H:%M:%S}  {title}  |  {body}\n")
-    subprocess.run(["notify-send", "-a", APP, "-u", urgency, "-i", icon, f"⚠ {title}", body],
-                   check=False)
+    result = subprocess.run(
+        ["notify-send", "-p", "-t", str(POPUP_SECONDS * 1000),
+         "-a", APP, "-u", urgency, "-i", icon, f"⚠ {title}", body],
+        check=False, capture_output=True, text=True)
+    nid = result.stdout.strip()
+    if nid.isdigit():
+        timer = threading.Timer(POPUP_SECONDS, _close_notification, args=(nid,))
+        timer.daemon = True
+        timer.start()
 
 
 def watch_auth():
