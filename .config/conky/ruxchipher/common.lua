@@ -1,4 +1,4 @@
--- Shared drawing helpers and Tokyo Night palette for the left-side widgets.
+-- Shared drawing helpers and Catppuccin Mocha palette for the left-side widgets.
 require 'cairo'
 pcall(require, 'cairo_xlib')
 
@@ -12,19 +12,19 @@ local function hex(h, a)
 end
 
 M.col = {
-    bg     = hex('#1a1b26', 0.86),
-    tile   = hex('#24283b', 0.55),
-    track  = hex('#292e42'),
-    fg     = hex('#c0caf5'),
-    sub    = hex('#a9b1d6'),
-    muted  = hex('#565f89'),
-    cyan   = hex('#7dcfff'),
-    blue   = hex('#7aa2f7'),
-    purple = hex('#bb9af7'),
-    green  = hex('#9ece6a'),
-    yellow = hex('#e0af68'),
-    orange = hex('#ff9e64'),
-    red    = hex('#f7768e'),
+    bg     = hex('#1e1e2e', 0.86),
+    tile   = hex('#313244', 0.55),
+    track  = hex('#45475a'),
+    fg     = hex('#cdd6f4'),
+    sub    = hex('#a6adc8'),
+    muted  = hex('#7f849c'),
+    cyan   = hex('#89dceb'),
+    blue   = hex('#cba6f7'),
+    purple = hex('#b4befe'),
+    green  = hex('#a6e3a1'),
+    yellow = hex('#f9e2af'),
+    orange = hex('#fab387'),
+    red    = hex('#f38ba8'),
     black  = hex('#000000'),
 }
 local col = M.col

@@ -72,11 +72,18 @@ Transparent widgets drawn from scratch in **Lua + cairo** on Conky.
   restores mouse input for the HUD and weather icon so their click actions work.
 
 ### Look and feel
-- **Tokyo Night shell theme** (`.themes/ruxchipher`, via the User Themes extension): top bar, menus, Quick Settings,
+Colours are no longer hard-coded here. They are driven by **[ruxtheme](https://github.com/Siddique-12300983/ruxtheme)**,
+a separate repo of mine: one palette file themes 16 configs through templates, and
+`ruxtheme set <theme>` repaints the desktop and live-reloads everything. The configs in
+this repo are the rendered output, currently **Catppuccin Mocha** with a mauve accent.
+Five themes ship with it, including the original Tokyo Night look, switchable with
+`Super+Alt+T` or from Quick Settings.
+
+- **Custom shell theme** (`.themes/ruxchipher`, via the User Themes extension): top bar, menus, Quick Settings,
   calendar, notifications and switchers recoloured on top of GNOME's own dark stylesheet, so it survives GNOME updates.
-- **Tiling Shell**: tiled windows with 10/14 px gaps and a thin Tokyo-blue border on the focused window (Super+Arrows).
-- **App themes**: Spotify via Spicetify (`text` theme, TokyoNight scheme) and the Tokyo Night Firefox theme (installed by policy).
-- Tokyo Night colours for GTK3/GTK4 (libadwaita) apps, **Papirus-Tokyo** icons (violet folders), a generated 4K wallpaper.
+- **Tiling Shell**: tiled windows with 10/14 px gaps and a thin accent border on the focused window (Super+Arrows).
+- **App themes**: Spotify via Spicetify (`text` theme) and a Firefox theme (installed by policy).
+- Themed GTK3/GTK4 (libadwaita) apps, **Papirus** icons with violet folders, and a 4K wallpaper per theme.
 - **fastfetch** terminal greeting, **ddterm** drop-down terminal on F12, clipboard history on Super+V.
 
 ## Shortcuts
@@ -88,6 +95,8 @@ Transparent widgets drawn from scratch in **Lua + cairo** on Conky.
 | Super+Alt+L / Super+Alt+Shift+L | lab up / lab down |
 | Super+Alt+F | focus mode on/off |
 | Super+Alt+S | sentinel alert report |
+| Super+Alt+T | theme carousel ([ruxtheme](https://github.com/Siddique-12300983/ruxtheme)) |
+| Super+Alt+Shift+T | switch theme dark / light |
 | Super+Arrows | move window to a tile (Tiling Shell) |
 
 ## Repo layout

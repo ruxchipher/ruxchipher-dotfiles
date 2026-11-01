@@ -10,19 +10,19 @@ local function hex(h, a)
     return { tonumber(h:sub(2, 3), 16) / 255, tonumber(h:sub(4, 5), 16) / 255, tonumber(h:sub(6, 7), 16) / 255, a or 1 }
 end
 
--- Tokyo Night
+-- Catppuccin Mocha
 local col = {
-    bg     = hex('#1a1b26', 0.86),
-    track  = hex('#292e42'),
-    fg     = hex('#c0caf5'),
-    sub    = hex('#a9b1d6'),
-    muted  = hex('#565f89'),
-    cyan   = hex('#7dcfff'),
-    blue   = hex('#7aa2f7'),
-    purple = hex('#bb9af7'),
-    green  = hex('#9ece6a'),
-    orange = hex('#ff9e64'),
-    red    = hex('#f7768e'),
+    bg     = hex('#1e1e2e', 0.86),
+    track  = hex('#45475a'),
+    fg     = hex('#cdd6f4'),
+    sub    = hex('#a6adc8'),
+    muted  = hex('#7f849c'),
+    cyan   = hex('#89dceb'),
+    blue   = hex('#cba6f7'),
+    purple = hex('#b4befe'),
+    green  = hex('#a6e3a1'),
+    orange = hex('#fab387'),
+    red    = hex('#f38ba8'),
 }
 
 ---------------------------------------------------------------- data

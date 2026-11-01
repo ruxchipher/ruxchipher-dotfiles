@@ -1,18 +1,18 @@
-/* ruxchipher: Tokyo Night colours for GTK3 apps (Adwaita dark). */
-@define-color theme_bg_color #1a1b26;
-@define-color theme_fg_color #c0caf5;
-@define-color theme_base_color #1f2335;
-@define-color theme_text_color #c0caf5;
-@define-color theme_selected_bg_color #7aa2f7;
-@define-color theme_selected_fg_color #1a1b26;
-@define-color insensitive_bg_color #1a1b26;
-@define-color borders #292e42;
-@define-color accent_bg_color #7aa2f7;
-@define-color accent_color #7aa2f7;
-@define-color window_bg_color #1a1b26;
-@define-color window_fg_color #c0caf5;
-@define-color view_bg_color #1f2335;
-@define-color headerbar_bg_color #16161e;
-@define-color sidebar_bg_color #16161e;
-@define-color popover_bg_color #1f2335;
-@define-color card_bg_color #24283b;
+/* ruxchipher: Catppuccin Mocha colours for GTK3 apps (Adwaita dark). */
+@define-color theme_bg_color #1e1e2e;
+@define-color theme_fg_color #cdd6f4;
+@define-color theme_base_color #28293a;
+@define-color theme_text_color #cdd6f4;
+@define-color theme_selected_bg_color #cba6f7;
+@define-color theme_selected_fg_color #1e1e2e;
+@define-color insensitive_bg_color #1e1e2e;
+@define-color borders #45475a;
+@define-color accent_bg_color #cba6f7;
+@define-color accent_color #cba6f7;
+@define-color window_bg_color #1e1e2e;
+@define-color window_fg_color #cdd6f4;
+@define-color view_bg_color #28293a;
+@define-color headerbar_bg_color #181825;
+@define-color sidebar_bg_color #181825;
+@define-color popover_bg_color #28293a;
+@define-color card_bg_color #313244;

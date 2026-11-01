@@ -10,19 +10,19 @@ local function hex(h, a)
     return { tonumber(h:sub(2, 3), 16) / 255, tonumber(h:sub(4, 5), 16) / 255, tonumber(h:sub(6, 7), 16) / 255, a or 1 }
 end
 
--- Tokyo Night (same palette as hud.lua)
+-- Catppuccin Mocha (same palette as hud.lua)
 local col = {
-    bg     = hex('#1a1b26', 0.86),
-    tile   = hex('#24283b', 0.55),
-    track  = hex('#292e42'),
-    fg     = hex('#c0caf5'),
-    sub    = hex('#a9b1d6'),
-    muted  = hex('#565f89'),
-    cyan   = hex('#7dcfff'),
-    blue   = hex('#7aa2f7'),
-    purple = hex('#bb9af7'),
-    green  = hex('#9ece6a'),
-    red    = hex('#f7768e'),
+    bg     = hex('#1e1e2e', 0.86),
+    tile   = hex('#313244', 0.55),
+    track  = hex('#45475a'),
+    fg     = hex('#cdd6f4'),
+    sub    = hex('#a6adc8'),
+    muted  = hex('#7f849c'),
+    cyan   = hex('#89dceb'),
+    blue   = hex('#cba6f7'),
+    purple = hex('#b4befe'),
+    green  = hex('#a6e3a1'),
+    red    = hex('#f38ba8'),
 }
 
 local VMS = {
@@ -40,7 +40,7 @@ local net_up = false
 local function poll()
     running = {}
     local now = os.time()
-    local p = io.popen(VIRSH .. 'domstats --state-running --cpu-total --vcpu 2>/dev/null')
+    local p = io.popen(VIRSH .. 'domstats --list-running --cpu-total --vcpu 2>/dev/null')
     local cur, stats = nil, {}
     if p then
         for line in p:lines() do
@@ -214,7 +214,7 @@ local function draw(cr, pulse)
 
     -- footer
     dot(cr, PAD + 3, 140, net_up and col.purple or col.muted)
-    text(cr, 'net lab · ' .. (net_up and 'isolated · active' or 'down'), PAD + 12, 144, 10, col.muted)
+    text(cr, 'net lab · ' .. (net_up and 'nat · active' or 'down'), PAD + 12, 144, 10, col.muted)
     text(cr, 'kvm/qemu', W - PAD, 144, 10, col.muted, { align = 'right' })
 end
 

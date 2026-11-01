@@ -3,7 +3,7 @@ fish_add_path -g $HOME/.local/bin
 
 if status is-interactive
     set -g fish_greeting
-    # Tokyo Night colours
+    # Catppuccin Mocha colours
     set -g fish_color_normal c0caf5
     set -g fish_color_command 7aa2f7
     set -g fish_color_keyword 7dcfff
@@ -28,7 +28,7 @@ if status is-interactive
     zoxide init fish | source
     fzf --fish | source
 
-    set -gx FZF_DEFAULT_OPTS "--color=bg+:#283457,fg:#c0caf5,fg+:#c0caf5,hl:#7dcfff,hl+:#7dcfff,info:#565f89,prompt:#7aa2f7,pointer:#7aa2f7,marker:#9ece6a,spinner:#7aa2f7,header:#e0af68,border:#3b4261,label:#c0caf5,selected-bg:#283457"
+    set -gx FZF_DEFAULT_OPTS "--color=bg+:#585b70,fg:#cdd6f4,fg+:#cdd6f4,hl:#89dceb,hl+:#89dceb,info:#7f849c,prompt:#cba6f7,pointer:#cba6f7,marker:#a6e3a1,spinner:#cba6f7,header:#f9e2af,border:#6c7086,label:#cdd6f4,selected-bg:#585b70"
 
     alias ls 'eza --icons --group-directories-first'
     alias ll 'eza -l --icons --git --group-directories-first'

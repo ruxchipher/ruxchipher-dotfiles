@@ -1,0 +1,10 @@
+
+# Downloaded wallpaper sources (orangci/walls-catppuccin-mocha, no stated licence)
+wallpapers/sources/
+.local/share/ruxtheme/venv/
+.local/share/ruxtheme/previews/
+__pycache__/
+
+# Theming engine lives in its own repo: github.com/Siddique-12300983/ruxtheme
+.config/ruxtheme/
+.local/share/ruxtheme/
