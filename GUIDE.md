@@ -18,7 +18,7 @@ Open a terminal: press **Super** (the Windows key), type `terminal`, and press E
 
 ```bash
 sudo pacman -S --needed git
-git clone https://github.com/Siddique-12300983/ruxchipher-dotfiles.git ~/ruxchipher-dotfiles
+git clone https://github.com/ruxchipher/ruxchipher-dotfiles.git ~/ruxchipher-dotfiles
 cd ~/ruxchipher-dotfiles
 ```
 

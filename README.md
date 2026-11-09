@@ -72,7 +72,7 @@ Transparent widgets drawn from scratch in **Lua + cairo** on Conky.
   restores mouse input for the HUD and weather icon so their click actions work.
 
 ### Look and feel
-Colours are no longer hard-coded here. They are driven by **[ruxtheme](https://github.com/Siddique-12300983/ruxtheme)**,
+Colours are no longer hard-coded here. They are driven by **[ruxtheme](https://github.com/ruxchipher/ruxtheme)**,
 a separate repo of mine: one palette file themes 16 configs through templates, and
 `ruxtheme set <theme>` repaints the desktop and live-reloads everything. The configs in
 this repo are the rendered output, currently **Catppuccin Mocha** with a mauve accent.
@@ -95,7 +95,7 @@ Five themes ship with it, including the original Tokyo Night look, switchable wi
 | Super+Alt+L / Super+Alt+Shift+L | lab up / lab down |
 | Super+Alt+F | focus mode on/off |
 | Super+Alt+S | sentinel alert report |
-| Super+Alt+T | theme carousel ([ruxtheme](https://github.com/Siddique-12300983/ruxtheme)) |
+| Super+Alt+T | theme carousel ([ruxtheme](https://github.com/ruxchipher/ruxtheme)) |
 | Super+Alt+Shift+T | switch theme dark / light |
 | Super+Arrows | move window to a tile (Tiling Shell) |
 
